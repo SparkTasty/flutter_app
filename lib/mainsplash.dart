@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,6 +34,41 @@ class SplashScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+}
+
+class MainSplashScreen extends StatefulWidget {
+  const MainSplashScreen({super.key});
+
+  @override
+  State<MainSplashScreen> createState() => _MainSplashScreenState();
+}
+
+class _MainSplashScreenState extends State<MainSplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 2), () {
+      if (!mounted) return;
+      Navigator.pushReplacementNamed(context, '/second');
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF00B345),
+      body: const Center(
+        child: Text(
+          'Go Mine',
+          style: TextStyle(
+            fontSize: 36,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

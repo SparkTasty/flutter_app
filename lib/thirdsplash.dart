@@ -70,12 +70,11 @@ class ThirdSplashScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // Navigate to onboarding or main app screen
                   Navigator.pushNamed(context, '/onboarding');
                 },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
-                  children: [
+                  children: const [
                     Text('Continue'),
                     SizedBox(width: 6),
                     Icon(Icons.chevron_right),
@@ -85,6 +84,20 @@ class ThirdSplashScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Onboarding')),
+      body: const Center(
+        child: Text('Onboarding content goes here'),
       ),
     );
   }
