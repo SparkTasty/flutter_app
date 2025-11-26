@@ -14,7 +14,7 @@ class _MainServiceScreenState extends State<MainServiceScreen> {
 
   // List of categories and icon data
   final List<_ServiceCategory> categories = [
-    _ServiceCategory('Transport', Icons.directions_car_filled_outlined, '/transport'),
+    _ServiceCategory('Transport', Icons.directions_car_outlined, '/maintransport'),
     _ServiceCategory('Logistics', Icons.local_shipping_outlined, '/logistics'),
     _ServiceCategory('Mart', Icons.storefront_outlined, '/mart'),
     _ServiceCategory('Food', Icons.fastfood_outlined, '/food'),
@@ -99,7 +99,7 @@ class _MainServiceScreenState extends State<MainServiceScreen> {
         padding: EdgeInsets.symmetric(vertical: 24, horizontal: 8),
         child: GridView.count(
           crossAxisCount: 4,
-          childAspectRatio: 0.78,
+          childAspectRatio: 1.2,
           mainAxisSpacing: 20,
           crossAxisSpacing: 10,
           children: filtered.map((cat) {
@@ -111,9 +111,6 @@ class _MainServiceScreenState extends State<MainServiceScreen> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(14),
-                  border: cat.label == 'Transport'
-                      ? Border.all(color: Colors.black87, width: 2)
-                      : null,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black12,
